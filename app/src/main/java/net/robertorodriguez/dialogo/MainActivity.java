@@ -56,42 +56,6 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    /**
-     * Método para mostrar el diálogo
-     */
-    @Deprecated
-    private void displayDialog(){
-        /*
-        // Declaramos los dos botones que tenemos en el layout
-        Button btn_agregarProducto, btn_cancelarProducto;
-
-        // Conectamos con el diseño
-        dialogoNuevoProducto.setContentView( R.layout.dialogo_nuevo_producto);
-
-        // Inicializamos los botones
-        btn_agregarProducto = dialogoNuevoProducto.findViewById(R.id.np_btn_Agregar);
-        btn_cancelarProducto = dialogoNuevoProducto.findViewById(R.id.np_btn_cancelar);
-
-        //Asignamos los eventos
-        btn_agregarProducto.setOnClickListener( new View.OnClickListener(){
-            @Override
-            public void onClick( View v ){
-                Toast.makeText(MainActivity.this, "Guardando", Toast.LENGTH_SHORT).show();
-            }
-        });
-        btn_cancelarProducto.setOnClickListener( new View.OnClickListener(){
-            @Override
-            public void onClick( View v ){
-                Toast.makeText(MainActivity.this, "Cancelar", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        dialogoNuevoProducto.show();
-
-         */
-
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
