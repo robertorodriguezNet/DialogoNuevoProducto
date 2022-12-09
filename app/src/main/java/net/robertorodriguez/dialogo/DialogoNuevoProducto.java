@@ -12,6 +12,17 @@ import androidx.fragment.app.DialogFragment;
 
 public class DialogoNuevoProducto extends DialogFragment {
 
+    /**
+     * Método estático que devuelve el diálogo
+     * @param
+     * @return
+     */
+    static DialogoNuevoProducto newInstacnce(){
+
+        DialogoNuevoProducto d = new DialogoNuevoProducto();
+        return d;
+    }
+
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

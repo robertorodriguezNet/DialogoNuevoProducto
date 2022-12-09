@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialogoNuevoProducto = new DialogoNuevoProducto();
+                dialogoNuevoProducto = DialogoNuevoProducto.newInstacnce();
                 dialogoNuevoProducto.show( getSupportFragmentManager(), "DialogoNuevoProducto");
             }
         });
