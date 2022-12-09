@@ -3,8 +3,6 @@ package net.robertorodriguez.dialogo;
 import android.app.Dialog;
 import android.os.Bundle;
 
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
@@ -26,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
-    //Declaramos el dialog
-    Dialog dialogoNuevoProducto;
+    // Declaramos el diálogo de nuevo producto
+    DialogoNuevoProducto dialogoNuevoProducto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,13 +40,11 @@ public class MainActivity extends AppCompatActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
-        // Inicializamos el diálogo
-        dialogoNuevoProducto = new Dialog( this );
-
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                displayDialog();
+                dialogoNuevoProducto = new DialogoNuevoProducto();
+                dialogoNuevoProducto.show( getSupportFragmentManager(), "DialogoNuevoProducto");
             }
         });
     }
@@ -63,7 +59,9 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Método para mostrar el diálogo
      */
+    @Deprecated
     private void displayDialog(){
+        /*
         // Declaramos los dos botones que tenemos en el layout
         Button btn_agregarProducto, btn_cancelarProducto;
 
@@ -89,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         dialogoNuevoProducto.show();
+
+         */
 
     }
 
