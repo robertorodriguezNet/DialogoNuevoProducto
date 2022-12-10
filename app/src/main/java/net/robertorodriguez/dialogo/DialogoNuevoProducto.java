@@ -2,15 +2,20 @@ package net.robertorodriguez.dialogo;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
 public class DialogoNuevoProducto extends DialogFragment {
+
+    // Definimos un oyente para el evento "Guardar producto".
+    OnNuevoProductoListener oyente;
 
     /**
      * Método estático que devuelve el diálogo
@@ -39,7 +44,8 @@ public class DialogoNuevoProducto extends DialogFragment {
                 .setPositiveButton("Agregar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(getActivity(), "Guardado", Toast.LENGTH_SHORT).show();
+                        //Agregamos el oyente para el botón
+                        oyente.onGuardarProductoClickListener();
                     }
                 })
                 .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
@@ -52,4 +58,24 @@ public class DialogoNuevoProducto extends DialogFragment {
          return builder.create();
 
     }
+
+    /**
+     * Método que comprueba que la activity que carga el
+     * implementa la interfaz .
+     * @param context
+     */
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        // Verificamos que la actividad host implementa la llamada
+        try {
+            // Instantiate the NoticeDialogListener so we can send events to the host
+            oyente = (OnNuevoProductoListener) context;
+        } catch (ClassCastException e) {
+            // Si la actividad no implementa la interfaz, se lanza excepción
+            throw new ClassCastException(context.toString()
+                    + " must implement NoticeDialogListener");
+        }
+    }
+
 }

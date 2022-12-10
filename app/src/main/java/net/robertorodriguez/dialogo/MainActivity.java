@@ -19,7 +19,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnNuevoProductoListener{
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
@@ -76,5 +76,13 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    /**
+     * Método que responde a la acción de guardar un nuevo producto.
+     */
+    @Override
+    public void onGuardarProductoClickListener() {
+        Toast.makeText(this, "Se ha recibido el producto", Toast.LENGTH_SHORT).show();
     }
 }
