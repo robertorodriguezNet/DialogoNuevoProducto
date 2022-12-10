@@ -6,7 +6,7 @@ Es una aplicación de ejemplo, no hace nada.
 
 Abre un diálogo para la inserción de un nuevo producto.
 
-La clase DialogoNuevoProducto estiende Dialog y representa un cuadro de diálogo en cual se
+La clase DialogoNuevoProducto extiende Dialog y representa un cuadro de diálogo en cual se
 muestra un formulario para cargar un nuevo producto.
 El cuadro de diálogo tiene dos botones: "Agregar" y "Cancelar".
 
